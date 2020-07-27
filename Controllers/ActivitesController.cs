@@ -8,121 +8,110 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebApplicationAuthManyToManyTest.Models;
-using AutoMapper;
 
 namespace WebApplicationAuthManyToManyTest.Controllers
 {
-    public class AbonnesController : Controller
+    public class ActivitesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Abonnes
+        // GET: Activites
         public async Task<ActionResult> Index()
         {
-            return View(await db.Abonnes.ToListAsync());
+            return View(await db.Activites.ToListAsync());
         }
 
-        // GET: Abonnes/Details/5
+        // GET: Activites/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Abonne abonne = await db.Abonnes.FindAsync(id);
-            if (abonne == null)
+            Activite activite = await db.Activites.FindAsync(id);
+            if (activite == null)
             {
                 return HttpNotFound();
             }
-            return View(abonne);
+            return View(activite);
         }
 
-        // GET: Abonnes/Create
+        // GET: Activites/Create
         public ActionResult Create()
         {
-            ViewBag.IdActivite = new SelectList(db.Activites, "Id", "Libelle");
             return View();
         }
 
-        // POST: Abonnes/Create
+        // POST: Activites/Create
         // Pour vous protéger des attaques par survalidation, activez les propriétés spécifiques auxquelles vous souhaitez vous lier. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Prenom,Mail,Photo, IdActivite")] AbonneVM abonneVM)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Libelle")] Activite activite)
         {
-
-            var config = new MapperConfiguration(cfg => cfg.CreateMap<AbonneVM, Abonne>());
-            var mapper = new Mapper(config);
-            Abonne abonne = mapper.Map<Abonne>(abonneVM);
-            // Récupérer l'activité selectionnée 
-            Activite activite = db.Activites.SingleOrDefault(x => x.Id == abonneVM.IdActivite);
-            abonne.Activites = new List<Activite>();
-            abonne.Activites.Add(activite);
-
             if (ModelState.IsValid)
             {
-                db.Abonnes.Add(abonne);
+                db.Activites.Add(activite);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(abonne);
+            return View(activite);
         }
 
-        // GET: Abonnes/Edit/5
+        // GET: Activites/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Abonne abonne = await db.Abonnes.FindAsync(id);
-            if (abonne == null)
+            Activite activite = await db.Activites.FindAsync(id);
+            if (activite == null)
             {
                 return HttpNotFound();
             }
-            return View(abonne);
+            return View(activite);
         }
 
-        // POST: Abonnes/Edit/5
+        // POST: Activites/Edit/5
         // Pour vous protéger des attaques par survalidation, activez les propriétés spécifiques auxquelles vous souhaitez vous lier. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Prenom,Mail,Photo")] Abonne abonne)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Libelle")] Activite activite)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(abonne).State = EntityState.Modified;
+                db.Entry(activite).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(abonne);
+            return View(activite);
         }
 
-        // GET: Abonnes/Delete/5
+        // GET: Activites/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Abonne abonne = await db.Abonnes.FindAsync(id);
-            if (abonne == null)
+            Activite activite = await db.Activites.FindAsync(id);
+            if (activite == null)
             {
                 return HttpNotFound();
             }
-            return View(abonne);
+            return View(activite);
         }
 
-        // POST: Abonnes/Delete/5
+        // POST: Activites/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Abonne abonne = await db.Abonnes.FindAsync(id);
-            db.Abonnes.Remove(abonne);
+            Activite activite = await db.Activites.FindAsync(id);
+            db.Activites.Remove(activite);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

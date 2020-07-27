@@ -125,3 +125,5 @@ C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplication
 C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\obj\Debug\WebApplicationAuthManyToManyTest.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\obj\Debug\WebApplicationAuthManyToManyTest.pdb
 C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\obj\Debug\WebApplicationAuthManyToManyTest.csprojAssemblyReference.cache
+C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\bin\AutoMapper.dll
+C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\bin\AutoMapper.xml

@@ -17,6 +17,7 @@ namespace WebApplicationAuthManyToManyTest.Models
         public string Mail { get; set; }
         [Display(Name = "Photo de l'Abonné")]
         public string Photo { get; set; }
+        [Display(Name = "Activité")]
         public int IdActivite { get; set; }
 
 

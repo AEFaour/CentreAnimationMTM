@@ -178,6 +178,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007270826383_InitialCreate.cs" />
+    <Compile Include="Migrations\202007270826383_InitialCreate.Designer.cs">
+      <DependentUpon>202007270826383_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007271319514_modifyAbonne.cs" />
+    <Compile Include="Migrations\202007271319514_modifyAbonne.Designer.cs">
+      <DependentUpon>202007271319514_modifyAbonne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Abonne.cs" />
     <Compile Include="Models\AbonneVM.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -269,6 +278,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202007270826383_InitialCreate.resx">
+      <DependentUpon>202007270826383_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007271319514_modifyAbonne.resx">
+      <DependentUpon>202007271319514_modifyAbonne.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

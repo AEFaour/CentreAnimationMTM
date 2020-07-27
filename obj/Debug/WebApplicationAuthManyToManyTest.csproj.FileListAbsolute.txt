@@ -127,3 +127,6 @@ C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplication
 C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\obj\Debug\WebApplicationAuthManyToManyTest.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\bin\AutoMapper.dll
 C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\bin\AutoMapper.xml
+C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\obj\Debug\WebApplicationAuthManyToManyTest.Migrations.InitialCreate.resources
+C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\obj\Debug\WebApplicationAuthManyToManyTest.csproj.GenerateResource.cache
+C:\Users\Anas FAOUR\source\repos\WebApplicationAuthManyToManyTest\WebApplicationAuthManyToManyTest\obj\Debug\WebApplicationAuthManyToManyTest.Migrations.modifyAbonne.resources
